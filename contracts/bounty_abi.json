@@ -1,0 +1,443 @@
+{
+	"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "bounty_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "developer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "bid_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "BidAccepted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "bounty_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "developer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "total_bounty_reward",
+						"type": "uint256"
+					}
+				],
+				"name": "BountyAccepted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "bounty_id",
+						"type": "uint256"
+					}
+				],
+				"name": "BountyCancelled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "bounty_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "creator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "BountyCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "id",
+						"type": "bytes32"
+					}
+				],
+				"name": "ChainlinkCancelled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "id",
+						"type": "bytes32"
+					}
+				],
+				"name": "ChainlinkFulfilled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "id",
+						"type": "bytes32"
+					}
+				],
+				"name": "ChainlinkRequested",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bounty_id",
+						"type": "uint256"
+					}
+				],
+				"name": "acceptBounty",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bounty_id",
+						"type": "uint256"
+					}
+				],
+				"name": "bidOnBounty",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_bytes32",
+						"type": "bytes32"
+					}
+				],
+				"name": "bytes32ToString",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bounty_id",
+						"type": "uint256"
+					}
+				],
+				"name": "cancelBounty",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_acceptDeadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_bid_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_organization_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_repository_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_issue_number",
+						"type": "string"
+					}
+				],
+				"name": "createBounty",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_requestId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "issueStatus",
+						"type": "bytes32"
+					}
+				],
+				"name": "fulfill",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBountyCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bounty_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getBountyData",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "creator",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "bid_amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum EfficientBounty.BountyStatus",
+								"name": "status",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "finishDeadline",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "organization_name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "repository_name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "issue_number",
+								"type": "string"
+							},
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "developer",
+										"type": "address"
+									},
+									{
+										"internalType": "uint256",
+										"name": "bid_amount",
+										"type": "uint256"
+									},
+									{
+										"internalType": "bool",
+										"name": "is_active",
+										"type": "bool"
+									}
+								],
+								"internalType": "struct EfficientBounty.Bid",
+								"name": "bid",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct EfficientBounty.Bounty",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bounty_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getBountyUrl",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestId",
+						"type": "uint256"
+					}
+				],
+				"name": "getRequestResult",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getUserBids",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getUserCreatedBounties",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getUserRequestIds",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bounty_id",
+						"type": "uint256"
+					}
+				],
+				"name": "processBounty",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		]
+}
